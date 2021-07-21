@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Banner from "./Banner";
+import BreedListFilter from "./BreedListFilter";
 
 const HomeBreeds = () => {
   const [breedsState, setBreeds] = useState({ loading: false, breeds: null });
@@ -19,11 +21,15 @@ const HomeBreeds = () => {
       {breedsState.loading && <div className="loader"></div>}
 
       <Banner />
+      <BreedListFilter />
+
       {breedsState.breeds &&
         breedsState.breeds.map((breed) => {
           return (
             <div key={breed}>
-              <h4>{breed}</h4>
+              <Link to={`/breeds/${breed}`}>
+                <h4>{breed}</h4>
+              </Link>
             </div>
           );
         })}

@@ -10,7 +10,7 @@ const Routes = () => {
       <Navbar />
       <main>
         <Route exact path="/" component={HomeBreeds} />
-        <Route exact path="/:breed" component={SingleBreed} />
+        <Route exact path="/breeds/:breed" component={SingleBreed} />
       </main>
     </Router>
   );
