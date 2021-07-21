@@ -24,7 +24,7 @@ describe("GET /api/breeds/", () => {
   });
 });
 
-describe("GET /api/breeds/whippet", () => {
+describe("GET /api/breeds/:id", () => {
   test("Make a GET request return a 200 and array of images of length 4", async () => {
     const response = await request(app).get("/api/breeds/whippet");
     expect(response.statusCode).toBe(200);
