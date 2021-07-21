@@ -13,6 +13,8 @@ router.get("/", async (req, res, next) => {
       res.json({ breeds: allDogBreedsList });
     }
   } catch (err) {
+    err.message = "Not Found";
+    err.code = err.response.data.code;
     next(err);
   }
 });
@@ -21,13 +23,15 @@ router.get("/:breed", async (req, res, next) => {
   try {
     const breed = req.params.breed;
     const dogResponse = await Dogs.getImagesByBreed(breed, 4); // 4 hardcoded
-    const responseStatus = dogResponse["data"]["status"];
+    const responseStatus = dogResponse["data"]["status"]; // data['code']
 
     if (responseStatus === "success") {
       const dogBreedImages = dogResponse["data"]["message"];
       res.json({ breedImages: dogBreedImages });
     }
   } catch (err) {
+    err.message = "Not Found";
+    err.code = err.response.data.code;
     next(err);
   }
 });

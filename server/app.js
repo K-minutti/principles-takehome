@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use((req, res, next) => {
   if (path.extname(req.path).length) {
     const err = new Error("Not Found");
-    err.status = 404;
+    err.code = 404;
     next(err);
   } else {
     next();
@@ -29,9 +29,9 @@ app.get("*", (req, res) => {
   res.sendFile(__dirname, "../public/index.html");
 });
 
-// Error handling
+// Error handling end
 app.use((err, req, res, next) => {
-  res.status(err.status || 500).send(err.message || "Internal Server Error");
+  res.status(err.code || 500).send(err.message || "Internal server error.");
 });
 
 module.exports = app;
