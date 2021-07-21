@@ -4,6 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build-client": "webpack",
+    "build-client-watch": "webpack -w",
+    "start": "node server",
+    "start-dev": "npm run build-client-watch & npm run start-server",
+    "start-server": "nodemon server -e html,js,css --ignore public --ignore src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
