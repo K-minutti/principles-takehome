@@ -18,7 +18,7 @@ module.exports = {
       {
         test: /jsx?$/,
         include: resolve(__dirname, "./src"),
-        loader: "bable-loader",
+        loader: "babel-loader",
       },
       {
         test: /\.css$/,
