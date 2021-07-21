@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const HomeBreeds = () => {
-  return <div>HELLO THIS IS HOME</div>;
+  const [breedsState, setBreeds] = useState({ loading: false, breeds: null });
+
+  useEffect(() => {
+    setBreeds({ loading: true });
+    const breeds = "http://localhost:3000/api/breeds";
+    fetch(breeds)
+      .then((res) => res.json())
+      .then((data) => {
+        setBreeds({ loading: false, breeds: data["breeds"] });
+      });
+  }, [setBreeds]);
+
+  return (
+    <div>
+      {breedsState.loading && <div className="loader"></div>}
+      <div>BANNER</div>
+      {breedsState.breeds &&
+        breedsState.breeds.map((breed) => {
+          return (
+            <div key={breed}>
+              <h4>{breed}</h4>
+            </div>
+          );
+        })}
+    </div>
+  );
 };
 
 export default HomeBreeds;

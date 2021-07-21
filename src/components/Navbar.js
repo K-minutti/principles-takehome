@@ -6,9 +6,11 @@ const Navbar = () => {
     <nav id="header-navbar">
       <NavLink to="/">
         <p id="Logo">
-          Dogo <i class="fas fa-paw"></i>
+          Dogo <i className="fas fa-paw"></i>
         </p>
       </NavLink>
     </nav>
   );
 };
+
+export default Navbar;
