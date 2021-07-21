@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Banner from "./Banner";
 
 const HomeBreeds = () => {
   const [breedsState, setBreeds] = useState({ loading: false, breeds: null });
@@ -16,7 +17,8 @@ const HomeBreeds = () => {
   return (
     <div>
       {breedsState.loading && <div className="loader"></div>}
-      <div>BANNER</div>
+
+      <Banner />
       {breedsState.breeds &&
         breedsState.breeds.map((breed) => {
           return (
