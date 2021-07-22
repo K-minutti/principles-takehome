@@ -51,8 +51,9 @@ const HomeBreeds = () => {
                   to={`/breeds/${breed}`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  key={breed}
                 >
-                  <div className="breeds-grid-card" key={breed}>
+                  <div className="breeds-grid-card">
                     <h3>{breed}</h3>
                   </div>
                 </Link>
