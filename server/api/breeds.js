@@ -23,7 +23,7 @@ router.get("/:breed", async (req, res, next) => {
   try {
     const breed = req.params.breed;
     const dogResponse = await Dogs.getImagesByBreed(breed, 4); // 4 hardcoded
-    const responseStatus = dogResponse["data"]["status"]; // data['code']
+    const responseStatus = dogResponse["data"]["status"];
 
     if (responseStatus === "success") {
       const dogBreedImages = dogResponse["data"]["message"];
@@ -36,7 +36,7 @@ router.get("/:breed", async (req, res, next) => {
   }
 });
 
-// Helper function to convert dog api res to 1D array
+// Helper function to convert dog api response obj to 1D array
 const convertDogObjToList = (dogBreedsObject) => {
   const breedsList = [];
   for (const breed in dogBreedsObject) {

@@ -20,7 +20,6 @@ Link to mini [design doc](https://docs.google.com/document/d/188-LzgQRyc19pJ1M16
 
 - axios
 - express
-- history
 - jest
 - react and react-router, react-router-dom
 - webpack

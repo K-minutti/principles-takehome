@@ -1,11 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import HomeBreeds from "./components/HomeBreedList";
 import SingleBreed from "./components/SingleBreed";
-
-// const history = createBrowserHistory(); history={history}
 
 const Routes = () => {
   return (

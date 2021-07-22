@@ -30,6 +30,7 @@ const SingleBreed = (props) => {
         <hr />
       </div>
       <div className="singleBreed-container">
+        {imagesState.loading && <div className="loader"></div>}
         <div className="breedImages-container">
           {imagesState.images &&
             imagesState.images.map((imageLink, idx) => {
