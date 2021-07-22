@@ -45,6 +45,6 @@ Kevin Minutti
 
 ## Extensions
 
-Client-side testing / Full test coverage
-Caching layer - specifically /breeds resource
-Refactor for Deployment
+1. Client-side testing / Full test coverage
+2. Caching layer - specifically /breeds resource
+3. Refactor for Deployment
