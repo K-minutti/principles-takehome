@@ -3,6 +3,7 @@
   --darkGreyTransparent: rgba(0, 0, 0, 0.45);
   --grey: rgba(137, 137, 137, 1);
   --lightGreyTransparent: rgba(243, 243, 243, 0.8);
+  --thinBorder: 1px solid rgba(193, 193, 193, 0.5);
 }
 
 /* ==== FONT IMPORT ==== */
@@ -46,7 +47,6 @@ h5 {
   font-size: 20px;
 }
 
-/* border: solid red 2px; */
 .home-banner {
   color: var(--darkGrey);
   padding: 40px 0px 168px 64px;
@@ -63,7 +63,6 @@ h5 {
   height: 30px;
   margin-left: 20px;
   border-radius: 6px;
-  outline: none;
   border: none;
   padding: 4px 12px;
   background: var(--lightGreyTransparent);
@@ -73,10 +72,11 @@ h5 {
   justify-content: center;
   padding: 40px 0px;
 }
-.breedList-grid {
+.breedList-grid,
+.breedImages-container {
   width: 80%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-gap: 24px;
   justify-content: space-evenly;
   justify-items: center;
@@ -84,29 +84,74 @@ h5 {
   align-items: center;
 }
 
+.img-container {
+  width: 300px;
+  height: 300px;
+}
+
+.img-container > img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
 .breeds-grid-card {
   width: 265px;
   height: 60px;
   background: white;
-  border: 1px solid rgba(193, 193, 193, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--thinBorder);
   border-radius: 8px;
+  text-transform: capitalize;
+}
+
+.breeds-grid-card:hover {
+  border: none;
+  box-shadow: 1px 6px 10px rgba(57, 43, 43, 0.2);
 }
 
 .singleBreed-container {
-  border: solid blue 2px;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px 0px 20px 30px;
+}
+
+.home-button {
+  width: 80px;
+  height: 40px;
+  justify-content: center;
+  border: var(--thinBorder);
+  border-radius: 8px;
+  padding: 0;
+  margin-right: 32px;
+}
+.dogBreed-title {
+  text-transform: capitalize;
 }
 
 .loader {
   border: 16px solid #f3f3f3;
-  border-radius: 50%;
   border-top: 16px solid #2a2a2a;
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
   width: 60px;
   height: 60px;
   -webkit-animation: spin 2s linear infinite; /* Safari */
   animation: spin 2s linear infinite;
 }
 
-/* Safari */
 @-webkit-keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);

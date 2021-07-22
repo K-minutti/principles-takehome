@@ -38,25 +38,24 @@ const HomeBreeds = () => {
 
   return (
     <div>
-      {breedsState.loading && <div className="loader"></div>}
-
       <Banner />
       <BreedListFilter filterList={filterList} />
 
       <div className="breedList-container">
+        {breedsState.loading && <div className="loader"></div>}
         <div className="breedList-grid">
           {breedsState.breeds &&
             breedsState.breeds.map((breed) => {
               return (
-                <div class="breeds-grid-card" key={breed}>
-                  <Link
-                    to={`/breeds/${breed}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
+                <Link
+                  to={`/breeds/${breed}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <div className="breeds-grid-card" key={breed}>
                     <h3>{breed}</h3>
-                  </Link>
-                </div>
+                  </div>
+                </Link>
               );
             })}
         </div>

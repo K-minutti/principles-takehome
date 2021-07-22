@@ -20,26 +20,28 @@ const SingleBreed = (props) => {
   }, [setBreedImages]);
 
   return (
-    <div className="singleBreed-container">
-      <Link to="/">
-        <h4>Home</h4>
-      </Link>
+    <>
+      <div className="row">
+        <Link className="home-button row" to="/">
+          <h4>Home</h4>
+        </Link>
 
-      <h1>{breed}</h1>
-      {imagesState.images &&
-        imagesState.images.map((imageLink, idx) => {
-          return (
-            <div key={`${idx}`}>
-              <img
-                src={imageLink}
-                alt={`Image of ${breed}`}
-                width="200"
-                height="300"
-              />
-            </div>
-          );
-        })}
-    </div>
+        <h1 className="dogBreed-title">{breed}</h1>
+        <hr />
+      </div>
+      <div className="singleBreed-container">
+        <div className="breedImages-container">
+          {imagesState.images &&
+            imagesState.images.map((imageLink, idx) => {
+              return (
+                <div className="img-container" key={`${idx}`}>
+                  <img src={imageLink} alt={`Image of ${breed}`} />
+                </div>
+              );
+            })}
+        </div>
+      </div>
+    </>
   );
 };
 
