@@ -5,13 +5,13 @@ const app = express();
 
 // Body parsing middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 // API Route - Dog API
 app.use("/api", require("./api"));
 
 // Serving static files
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "..", "public")));
 
 // Requests with extensions (.js .ccs etc.) sending 404
 app.use((req, res, next) => {
@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 // Wildcard-base sends index.html
 app.get("*", (req, res) => {
-  res.sendFile(__dirname, "../public/index.html");
+  res.sendFile(path.join(__dirname, "..", "public/index.html"));
 });
 
 // Error handling end

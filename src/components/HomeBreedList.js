@@ -4,30 +4,54 @@ import Banner from "./Banner";
 import BreedListFilter from "./BreedListFilter";
 
 const HomeBreeds = () => {
-  const [breedsState, setBreeds] = useState({ loading: false, breeds: null });
+  const [breedsState, setBreeds] = useState({
+    loading: false,
+    breeds: null,
+    allBreeds: null,
+  });
+  const breedsURL = "http://localhost:3000/api/breeds";
 
   useEffect(() => {
     setBreeds({ loading: true });
-    const breeds = "http://localhost:3000/api/breeds";
-    fetch(breeds)
+    fetch(breedsURL)
       .then((res) => res.json())
       .then((data) => {
-        setBreeds({ loading: false, breeds: data["breeds"] });
+        setBreeds({
+          loading: false,
+          breeds: data["breeds"],
+          allBreeds: data["breeds"],
+        });
       });
   }, [setBreeds]);
+
+  const filterList = (event) => {
+    event.preventDefault();
+    const queryText = event.target.value.trim();
+    const allBreeds = breedsState.allBreeds;
+    const queryMatches = allBreeds.filter((breed) => {
+      const regex = new RegExp(`^${queryText}`, "gi");
+      return breed.match(regex);
+    });
+
+    setBreeds({ loading: false, breeds: queryMatches, allBreeds: allBreeds });
+  };
 
   return (
     <div>
       {breedsState.loading && <div className="loader"></div>}
 
       <Banner />
-      <BreedListFilter />
+      <BreedListFilter filterList={filterList} />
 
       {breedsState.breeds &&
         breedsState.breeds.map((breed) => {
           return (
             <div key={breed}>
-              <Link to={`/breeds/${breed}`}>
+              <Link
+                to={`/breeds/${breed}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <h4>{breed}</h4>
               </Link>
             </div>

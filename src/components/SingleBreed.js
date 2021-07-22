@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const SingleBreed = (props) => {
   const breed = props.match.params.breed;
@@ -14,13 +15,16 @@ const SingleBreed = (props) => {
     fetch(images)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data["breedImages"]);
         setBreedImages({ loading: false, images: data["breedImages"] });
       });
   }, [setBreedImages]);
 
   return (
     <div>
+      <Link to="/">
+        <h4>Home</h4>
+      </Link>
+
       <h1>{breed}</h1>
       {imagesState.images &&
         imagesState.images.map((imageLink, idx) => {
