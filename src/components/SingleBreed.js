@@ -20,7 +20,7 @@ const SingleBreed = (props) => {
   }, [setBreedImages]);
 
   return (
-    <div>
+    <div className="singleBreed-container">
       <Link to="/">
         <h4>Home</h4>
       </Link>

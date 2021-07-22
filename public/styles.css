@@ -1,3 +1,101 @@
+:root {
+  --darkGrey: rgba(86, 86, 86, 1);
+  --darkGreyTransparent: rgba(0, 0, 0, 0.45);
+  --grey: rgba(137, 137, 137, 1);
+  --lightGreyTransparent: rgba(243, 243, 243, 0.8);
+}
+
+/* ==== FONT IMPORT ==== */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* ============= HEADER - NAV ================= */
+
+#header-navbar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+}
+
+#Logo {
+  font-weight: 700;
+  font-size: 22px;
+}
+
+/* ============= MAIN - COMPONENTS =============== */
+h1 {
+  font-weight: 100;
+  font-size: 56px;
+}
+h2 {
+  font-size: 30px;
+}
+h5 {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+/* border: solid red 2px; */
+.home-banner {
+  color: var(--darkGrey);
+  padding: 40px 0px 168px 64px;
+}
+.listFilterForm {
+  color: var(--darkGrey);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 12px 68px;
+}
+.listFilterForm > input {
+  width: 70%;
+  height: 30px;
+  margin-left: 20px;
+  border-radius: 6px;
+  outline: none;
+  border: none;
+  padding: 4px 12px;
+  background: var(--lightGreyTransparent);
+}
+.breedList-container {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0px;
+}
+.breedList-grid {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+  grid-gap: 24px;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-content: space-evenly;
+  align-items: center;
+}
+
+.breeds-grid-card {
+  width: 265px;
+  height: 60px;
+  background: white;
+  border: 1px solid rgba(193, 193, 193, 0.5);
+  border-radius: 8px;
+}
+
+.singleBreed-container {
+  border: solid blue 2px;
+}
+
 .loader {
   border: 16px solid #f3f3f3;
   border-radius: 50%;

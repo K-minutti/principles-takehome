@@ -43,20 +43,24 @@ const HomeBreeds = () => {
       <Banner />
       <BreedListFilter filterList={filterList} />
 
-      {breedsState.breeds &&
-        breedsState.breeds.map((breed) => {
-          return (
-            <div key={breed}>
-              <Link
-                to={`/breeds/${breed}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <h4>{breed}</h4>
-              </Link>
-            </div>
-          );
-        })}
+      <div className="breedList-container">
+        <div className="breedList-grid">
+          {breedsState.breeds &&
+            breedsState.breeds.map((breed) => {
+              return (
+                <div class="breeds-grid-card" key={breed}>
+                  <Link
+                    to={`/breeds/${breed}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <h3>{breed}</h3>
+                  </Link>
+                </div>
+              );
+            })}
+        </div>
+      </div>
     </div>
   );
 };

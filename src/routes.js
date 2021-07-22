@@ -11,8 +11,10 @@ const Routes = () => {
   return (
     <Router>
       <Navbar />
-      <Route exact path="/" component={HomeBreeds} />
-      <Route exact path="/breeds/:breed" component={SingleBreed} />
+      <main className="main-container">
+        <Route exact path="/" component={HomeBreeds} />
+        <Route exact path="/breeds/:breed" component={SingleBreed} />
+      </main>
     </Router>
   );
 };
