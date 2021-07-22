@@ -1,6 +1,4 @@
-# Project Title
-
-Principles Take Home Project
+# Principles Take Home Project
 
 ![project home image](https://github.com/K-minutti/readme-images/blob/main/principles.png)
 
@@ -46,3 +44,7 @@ Test
 Kevin Minutti
 
 ## Extensions
+
+Client-side testing / Full test coverage
+Caching layer - specifically /breeds resource
+Refactor for Deployment
